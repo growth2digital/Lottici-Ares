@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-deep: #233B5B;
+    --color-architectural: #385675;
+    --color-mist: #E8EEF3;
+    --color-offwhite: #F6F4EF;
+    --color-text: #2D3748;
+    --color-muted: #6D7885;
+    --color-gold: #C2A26F;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #F6F4EF;
+    color: #2D3748;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Custom selection */
+  ::selection {
+    background-color: #233B5B;
+    color: #F6F4EF;
+  }
+
+  /* Accessible focus outlines */
+  :focus-visible {
+    outline: 2px solid #385675;
+    outline-offset: 3px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F6F4EF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #385675;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #233B5B;
+}
+
+/* Subtle architectural curve overlay */
+.curved-edge {
+  border-radius: 2rem 2rem 0 0;
+}
+
+@media (min-width: 768px) {
+  .curved-edge-lg {
+    border-radius: 3.5rem 3.5rem 0 0;
+  }
+}
